@@ -1,17 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './screens/home/Home'
-import Recuirtment from './screens/recuirtment/Recuirtment'
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
-import DashboardLayout from './components/dashboardLayout/dashboard'
-function Controlller() {
+import {BrowserRouter as Router,Switch} from 'react-router-dom'
+import DashboardLayout from './components/dashboardLayout/DashboardLayout'
+function Controller() {
   return (
     <div>
       <Router>
         <DashboardLayout>
+          this is dashboard
         <Switch>
-          <Route exact path="/" render={(props)=><Home {...props}/>}/>
-          <Route path="/recuirtment" render={(props)=><Recuirtment {...props}/>}/>
         </Switch>
         </DashboardLayout>
       </Router>
@@ -19,4 +15,4 @@ function Controlller() {
   );
 }
 
-export default Controlller;
+export default Controller;
