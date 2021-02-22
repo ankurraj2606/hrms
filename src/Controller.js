@@ -1,18 +1,22 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import DashboardLayout from "./components/dashboardLayout/DashboardLayout.js";
-
-const Controller = () => {
+import logo from './logo.svg';
+import './App.css';
+import Home from './screens/home/Home'
+import Recuirtment from './screens/recuirtment/Recuirtment'
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import DashboardLayout from './components/dashboardLayout/dashboard'
+function Controlller() {
   return (
-    <Router>
-      <DashboardLayout>
-        this is dashboard layout
+    <div>
+      <Router>
+        <DashboardLayout>
         <Switch>
-          <Route />
+          <Route exact path="/" render={(props)=><Home {...props}/>}/>
+          <Route path="/recuirtment" render={(props)=><Recuirtment {...props}/>}/>
         </Switch>
-      </DashboardLayout>
-    </Router>
+        </DashboardLayout>
+      </Router>
+    </div>
   );
-};
+}
 
-export default Controller;
+export default Controlller;
