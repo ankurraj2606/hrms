@@ -4,31 +4,39 @@ import { BsPeople } from 'react-icons/bs'
 import { AiTwotoneSetting } from 'react-icons/ai'
 import { CgFileDocument } from 'react-icons/cg'
 import { HiOutlineDocumentReport } from 'react-icons/hi'
-import {FaCalendarAlt} from 'react-icons/fa'
+import { FaCalendarAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import om from '../dashboardLayout/om.png'
 const navItems = [
     {
         name: "Dashboard",
-        icon:<BiHomeAlt/>
+        icon: <BiHomeAlt />,
+        link:"/"
     },
     {
         name: "Recruitment",
-        icon:<BsPeople/>
+        icon: <BsPeople />,
+        link:"/recruitment"
     },
     {
         name: "OnBoarding",
-        icon:<CgFileDocument/>
+        icon: <CgFileDocument />,
+        link:"/onboarding"
     },
     {
         name: "Reports",
-        icon:<HiOutlineDocumentReport/>
+        icon: <HiOutlineDocumentReport />,
+        link:"/reports"
     },
     {
         name: "Calendar",
-        icon:<FaCalendarAlt/>
+        icon: <FaCalendarAlt />,
+        link:"/calendar"
     },
     {
         name: "Settings",
-        icon:<AiTwotoneSetting/>
+        icon: <AiTwotoneSetting />,
+        link:"/settings"
     }
 ]
 
@@ -41,16 +49,19 @@ const DashboardLayout = ({ children }) => {
                 </div>
                 <div className="nav-container">
                     {navItems.map((navItem, index) => (
+                        <Link key={index} to = {navItem.link}>
                         <div key={index} className="nav-item">
                             {navItem.icon}
                             <label className="item-name">{navItem.name}</label>
-                            
-                        </div>
+                            </div>
+                        </Link>
                     ))}
+                </div>
+                <div className="image-container">
+                <img src={om} alt="logo" width="80px" height="80px"/>
                 </div>
                 </nav>
             <div className="main-container">
-                here are children
                  {children}
             </div>
                 

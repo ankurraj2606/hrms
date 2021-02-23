@@ -31,12 +31,27 @@
             align-items: center;
             color: $hr_white;
             padding: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
 
             .item-name {
                 margin-left: 16px;
-                color: $hr_white;
                 font-weight: 800;
+                cursor: pointer;
+
+            }
+
+            &:hover {
+                color: $hr_accent;
+                border-right: 4px solid $hr_accent;
             }
         }
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
     }
 }
